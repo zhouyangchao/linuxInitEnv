@@ -1,0 +1,26 @@
+[user]
+	name = test
+	email = test@test.com
+[core]
+	editor = vim
+	pager = less -x1,5
+[branch]
+	autosetuprebase = always
+[push]
+	default = simple
+	followTags = true
+[credential]
+	helper = store
+[lfs]
+	locksverify = false
+	#allowincompletepush = true
+	#contenttype = false
+[alias]
+	permission-reset = !git diff -p -R --no-color | grep -E \"^(diff|(old|new) mode)\" --color=never | git apply
+[pack]
+	windowMemory = 52428800
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
